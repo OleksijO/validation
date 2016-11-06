@@ -1,7 +1,9 @@
 package training.controller;
 
 import training.model.Model;
+import training.model.entity.notebook.Record;
 import training.view.View;
+import training.view.ViewFactory;
 
 import java.util.Scanner;
 
@@ -22,9 +24,11 @@ public class Controller extends AbstractController{
 
     // The Work method
     public void processUser(){
-        Scanner sc = new Scanner(System.in);
-
-       //inputIntValueWithScanner("",sc);
+        Scanner scanner = new Scanner(System.in);
+        Record record = ControllerFactory.getRecordInputController(ViewFactory.getRecordInputView())
+                .inputRecordFromScanner(scanner);
+        model.saveNotebookRecord(record);
+        //inputIntValueWithScanner("",sc);
     }
 
 

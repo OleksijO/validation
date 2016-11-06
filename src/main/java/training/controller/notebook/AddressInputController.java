@@ -15,7 +15,7 @@ import static training.view.notebook.AddressInputView.*;
  * Created by oleksij.onysymchuk@gmail on 06.11.2016.
  */
 public class AddressInputController extends AbstractController {
-    private static final String REGEXP_INDEX = "[0-9]{5}]";
+    private static final String REGEXP_INDEX = "[0-9]{5}";
     private static final String REGEXP_CITY = ".{2,30}";
     private static final String REGEXP_STREET = ".{2,30}";
     private static final String REGEXP_HOUSE = "^[\\d]+([\\/][\\d]+)?([-][А-Яа-яA-Za-z])?";

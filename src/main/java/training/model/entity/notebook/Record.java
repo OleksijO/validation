@@ -210,4 +210,27 @@ public class Record {
         result = 31 * result + (lastModifiedDate != null ? lastModifiedDate.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Record{" +
+                "id=" + id +
+                ", lastName='" + lastName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", middleName='" + middleName + '\'' +
+                ", fullName='" + fullName + '\'' +
+                ", nickName='" + nickName + '\'' +
+                ", comment='" + comment + '\'' +
+                ", group=" + group +
+                ", homePhone='" + homePhone + '\'' +
+                ", mobilePhone='" + mobilePhone + '\'' +
+                ", mobilePhone2='" + mobilePhone2 + '\'' +
+                ", email='" + email + '\'' +
+                ", skype='" + skype + '\'' +
+                ", address=" + address +
+                ", fullAddress='" + fullAddress + '\'' +
+                ", creationDate=" + creationDate +
+                ", lastModifiedDate=" + lastModifiedDate +
+                '}';
+    }
 }
