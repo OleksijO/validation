@@ -1,4 +1,4 @@
-package ua.kpi.tef;
+package training;
 
 import java.util.Scanner;
 
