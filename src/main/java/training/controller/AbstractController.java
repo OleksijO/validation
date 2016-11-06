@@ -32,7 +32,7 @@ public class AbstractController {
 
     public String inputStringValueWithScanner(Scanner sc, String prompt) {
         view.printMessage(prompt);
-        return sc.next();
+        return sc.nextLine();
     }
 
     public String inputStringValueWithValidation(Scanner scanner,
@@ -41,8 +41,7 @@ public class AbstractController {
                                                  StringToPatternValidator validator,
                                                  Pattern pattern) {
         while (true) {
-            view.printMessage(prompt);
-            String userInput = scanner.nextLine();
+            String userInput = inputStringValueWithScanner(scanner, prompt);
             if (allowEmptyInput &&
                     ((userInput == null) || (userInput.isEmpty()))) {
                 return SKIPPED_INPUT;

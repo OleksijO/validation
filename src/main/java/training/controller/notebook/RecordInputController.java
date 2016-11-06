@@ -1,6 +1,10 @@
 package training.controller.notebook;
 
 import training.controller.AbstractController;
+import training.controller.validation.IntInRangeValidator;
+import training.controller.validation.StringToPatternValidator;
+import training.controller.validation.ValidatorFactory;
+import training.model.entity.notebook.Group;
 import training.model.entity.notebook.Record;
 import training.view.notebook.RecordInputView;
 
@@ -25,6 +29,8 @@ public class RecordInputController extends AbstractController {
     }
 
     public Record inputRecordFromScanner(Scanner scanner){
+        IntInRangeValidator intValidator = ValidatorFactory.getIntInRangeValidator(0, Group.values().length - 1);
+        StringToPatternValidator stringValidator = ValidatorFactory.getStringToPatternValidator();
         String stringValue;
         int intValue;
         Record record=new Record();

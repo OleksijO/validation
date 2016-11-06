@@ -5,11 +5,11 @@ package training.controller.validation;
  */
 public class ValidatorFactory {
 
-    public StringToPatternValidator getStringToPatternValidator(){
+    public static StringToPatternValidator getStringToPatternValidator(){
         return new StringToPatternValidator();
     }
 
-    public IntInRangeValidator getIntInRangeValidator(int min, int max){
+    public static IntInRangeValidator getIntInRangeValidator(int min, int max){
         return new IntInRangeValidator(min,max);
     }
 }
