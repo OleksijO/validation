@@ -1,11 +1,14 @@
 package training.controller.notebook;
 
 import training.controller.AbstractController;
+import training.controller.ControllerFactory;
 import training.controller.validation.IntInRangeValidator;
 import training.controller.validation.StringToPatternValidator;
 import training.controller.validation.ValidatorFactory;
+import training.model.entity.notebook.Address;
 import training.model.entity.notebook.Group;
 import training.model.entity.notebook.Record;
+import training.view.ViewFactory;
 import training.view.notebook.RecordInputView;
 
 import java.text.ParseException;
@@ -64,7 +67,7 @@ public class RecordInputController extends AbstractController {
         String stringValue;
         int intValue;
         view.printMessage(INPUT_RECORD_DATA);
- /*       stringValue =
+       stringValue =
                 inputStringValueWithValidation(scanner, INPUT_FIRST_NAME, false, stringValidator, PATTERN_FIRST_NAME);
         record.setFirstName(stringValue);
         stringValue =
@@ -105,7 +108,7 @@ public class RecordInputController extends AbstractController {
                 .inputAddressFromScanner(scanner);
         record.setAddress(address);
         record.setFullAddress(address.getFullAddress());
-*/
+
         try {
             while(true) {
                 stringValue =
