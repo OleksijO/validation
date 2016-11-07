@@ -7,7 +7,6 @@ package training.controller.validation;
  * @author oleksij.onysymchuk@gmail
  */
 abstract public class AbstractValidator {
-    public static final String STRING_DO_NOT_MATHES_PATTERN = "Validation error: string do not matches pattern. ";
     /**
      * Stored validation error message if validation is failed
      */

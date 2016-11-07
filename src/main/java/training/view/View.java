@@ -12,9 +12,9 @@ public class View {
     public static final String TRY_AGAIN = "Repeat with more attention, please! ";
 
     /**
-     * shows message on standart out
+     * shows message on standard out
      *
-     * @param message a text to be shown on standart out
+     * @param message a text to be shown on standard out
      */
     public void printMessage(String message){
         System.out.println(message);
