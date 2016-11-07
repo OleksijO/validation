@@ -23,7 +23,7 @@ abstract public class AbstractController {
     /**
      * Initializes fields of class
      *
-     * @param view
+     * @param view The reference to the view unit
      */
     public AbstractController(View view) {
         this.view = view;
