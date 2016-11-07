@@ -3,7 +3,10 @@ package training.view.notebook;
 import training.view.View;
 
 /**
- * Created by oleksij.onysymchuk@gmail on 06.11.2016.
+ * This class extends common View and determines specific view constants for RecordInputController
+ *
+ * @version 7 NOV 2016
+ * @author oleksij.onysymchuk@gmail
  */
 public class RecordInputView extends View {
     public static final String DATE_FORMAT = "dd/MM/yyyy";

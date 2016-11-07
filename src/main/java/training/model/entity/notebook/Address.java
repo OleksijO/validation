@@ -1,7 +1,10 @@
 package training.model.entity.notebook;
 
 /**
- * Created by oleksij.onysymchuk@gmail on 06.11.2016.
+ * This class represents address object, which is used as a field in {@link Record}
+ *
+ * @version 7 NOV 2016
+ * @author oleksij.onysymchuk@gmail
  */
 public class Address {
     public static final String ADDRESS_SEPARATOR = ", ";

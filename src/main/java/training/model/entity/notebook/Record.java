@@ -3,14 +3,17 @@ package training.model.entity.notebook;
 import java.util.Date;
 
 /**
- * Created by oleksij.onysymchuk@gmail on 06.11.2016.
+ * This class represents entity of a record in old notebook
+ *
+ * @author oleksij.onysymchuk@gmail
+ * @version 7 NOV 2016
  */
 public class Record {
     private int id;
     private String lastName;
     private String firstName;
     private String middleName;
-    private String fullName;
+    private String lastNameAndInitials;
     private String nickName;
     private String comment;
     private Group group;
@@ -40,8 +43,8 @@ public class Record {
         return middleName;
     }
 
-    public String getFullName() {
-        return fullName;
+    public String getLastNameAndInitials() {
+        return lastNameAndInitials;
     }
 
     public String getNickName() {
@@ -108,8 +111,8 @@ public class Record {
         this.middleName = middleName;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setLastNameAndInitials(String lastNameAndInitials) {
+        this.lastNameAndInitials = lastNameAndInitials;
     }
 
     public void setNickName(String nickName) {
@@ -171,7 +174,8 @@ public class Record {
         if (lastName != null ? !lastName.equals(record.lastName) : record.lastName != null) return false;
         if (firstName != null ? !firstName.equals(record.firstName) : record.firstName != null) return false;
         if (middleName != null ? !middleName.equals(record.middleName) : record.middleName != null) return false;
-        if (fullName != null ? !fullName.equals(record.fullName) : record.fullName != null) return false;
+        if (lastNameAndInitials != null ? !lastNameAndInitials.equals(record.lastNameAndInitials) : record.lastNameAndInitials != null)
+            return false;
         if (nickName != null ? !nickName.equals(record.nickName) : record.nickName != null) return false;
         if (comment != null ? !comment.equals(record.comment) : record.comment != null) return false;
         if (group != record.group) return false;
@@ -195,7 +199,7 @@ public class Record {
         result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
         result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
         result = 31 * result + (middleName != null ? middleName.hashCode() : 0);
-        result = 31 * result + (fullName != null ? fullName.hashCode() : 0);
+        result = 31 * result + (lastNameAndInitials != null ? lastNameAndInitials.hashCode() : 0);
         result = 31 * result + (nickName != null ? nickName.hashCode() : 0);
         result = 31 * result + (comment != null ? comment.hashCode() : 0);
         result = 31 * result + (group != null ? group.hashCode() : 0);
@@ -218,7 +222,7 @@ public class Record {
                 ", lastName='" + lastName + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", middleName='" + middleName + '\'' +
-                ", fullName='" + fullName + '\'' +
+                ", lastNameAndInitials='" + lastNameAndInitials + '\'' +
                 ", nickName='" + nickName + '\'' +
                 ", comment='" + comment + '\'' +
                 ", group=" + group +
