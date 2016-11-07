@@ -11,7 +11,7 @@ import java.util.Scanner;
  * Created by oleksij.onysymchuk@gmail on 07.11.2016.
  */
 public class AddressInputControllerTest {
-    @Test
+    @Test (timeout = 1000L)
     public void testInputAddressFromScanner() throws Exception {
         String index="12345";
         String city="City City -";

@@ -41,7 +41,7 @@ public class ControllerTest {
     public void testInputStringValueWithValidation() {
         Model model = new Model();
         View view = new View();
-        Pattern pattern = Pattern.compile("(.){2,3}]");
+        Pattern pattern = Pattern.compile("(.){2,3}");
         String input[] = {"1", "1234", "  ", "    ", "215234523454323423", "50"};
         Scanner scanner = new Scanner(System.in);
         // replacing user input to strings from array

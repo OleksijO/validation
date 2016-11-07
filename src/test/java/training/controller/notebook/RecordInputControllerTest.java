@@ -16,7 +16,7 @@ import java.util.Scanner;
  * Created by oleksij.onysymchuk@gmail on 07.11.2016.
  */
 public class RecordInputControllerTest {
-    @Test
+    @Test (timeout = 1000L)
     public void testInputRecordFromScanner() throws Exception {
         String index = "12345";
         String city = "City City -";
@@ -70,7 +70,7 @@ public class RecordInputControllerTest {
             @Override
             public String inputStringValueWithScanner(Scanner scanner, String prompt) {
                 System.out.println(input[counter]);
-                return input[counter++];
+                return input[counter++]+"\n\r";
             }
 
             @Override
