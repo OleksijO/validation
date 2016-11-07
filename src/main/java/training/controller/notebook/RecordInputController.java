@@ -6,6 +6,7 @@ import training.model.entity.notebook.Address;
 import training.model.entity.notebook.Group;
 import training.model.entity.notebook.Record;
 import training.view.ViewFactory;
+import training.view.notebook.AddressInputView;
 import training.view.notebook.RecordInputView;
 
 import java.text.ParseException;
@@ -25,7 +26,7 @@ public class RecordInputController extends AbstractController {
     private static final String DATE_PARSING_ERROR = "ERROR! Unexpected situation while parsing dates. Aborting...";
 
     /* Regexp for user inputs */
-    private static final String REGEX_FIRST_NAME = "^[A-ZА-Я]([a-zа-я-]{1,29})?";
+    private static final String REGEX_FIRST_NAME = "^[A-ZА-Яa-zа-я\\-]{1,30}";
     private static final String REGEX_LAST_NAME = "^[A-ZА-Я]([a-zа-я-\\s]{1,49})?";
     private static final String REGEX_MIDDLE_NAME = "^[A-ZА-Я]([a-zа-я\\-]{1,29})?";
     private static final String REGEX_NICKNAME = "^[A-Za-z]([A-Za-z0-9_-]{1,29})?";
@@ -83,10 +84,10 @@ public class RecordInputController extends AbstractController {
         String stringValue;
         int intValue;
         view.printMessage(INPUT_RECORD_DATA);
-        stringValue = inputStringValueWithValidation(scanner, INPUT_FIRST_NAME, PATTERN_FIRST_NAME);
-        record.setFirstName(stringValue);
-        stringValue = inputStringValueWithValidation(scanner, INPUT_LAST_NAME, PATTERN_LAST_NAME);
+        stringValue = inputStringValueWithValidation(scanner, INPUT_LAST_NAME, PATTERN_FIRST_NAME);
         record.setLastName(stringValue);
+        stringValue = inputStringValueWithValidation(scanner, INPUT_FIRST_NAME, PATTERN_LAST_NAME);
+        record.setFirstName(stringValue);
         stringValue = inputStringValueWithValidation(scanner, INPUT_MIDDLE_NAME, PATTERN_MIDDLE_NAME);
         record.setMiddleName(stringValue);
         record.setLastNameAndInitials(
@@ -109,7 +110,7 @@ public class RecordInputController extends AbstractController {
         record.setEmail(stringValue);
         stringValue = inputStringValueWithValidation(scanner, INPUT_SKYPE, PATTERN_SKYPE);
         record.setSkype(stringValue);
-        Address address = ControllerFactory.getAddressInputController(ViewFactory.getAddressInputView())
+        Address address = getAddressInputController(ViewFactory.getAddressInputView())
                 .inputAddressFromScanner(scanner);
         record.setAddress(address);
         record.setFullAddress(address.getFullAddress());
@@ -148,6 +149,10 @@ public class RecordInputController extends AbstractController {
         for (Group group : Group.values()) {
             view.printMessage(String.format(ROW_FORMAT_GROUP_LIST, group.ordinal(), group.toString()));
         }
+    }
+
+    protected AddressInputController getAddressInputController(AddressInputView view){
+        return ControllerFactory.getAddressInputController(view);
     }
 
 }
